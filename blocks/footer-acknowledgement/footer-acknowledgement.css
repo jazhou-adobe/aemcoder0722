@@ -1,0 +1,66 @@
+.footer-acknowledgement {
+  --footer-bg: #f2f2f7;
+  --footer-text: #131a35;
+  --ack-font-size: 14px;
+
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 0 24px 48px;
+}
+
+.footer-acknowledgement::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: rgba(5, 5, 5, 0.1);
+  margin-bottom: 24px;
+  max-width: 1128px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-acknowledgement > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.footer-acknowledgement img {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.footer-acknowledgement p {
+  font-size: var(--ack-font-size);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--footer-text);
+}
+
+.footer-acknowledgement a {
+  color: var(--footer-text);
+  text-decoration: underline;
+}
+
+/* Reset EDS button styling */
+main .footer-acknowledgement .button-container { display: inline; }
+main .footer-acknowledgement a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--footer-text);
+  font-size: var(--ack-font-size);
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .footer-acknowledgement {
+    padding: 0 32px 48px;
+  }
+}

@@ -1,0 +1,16 @@
+:root {
+  --heading-font-family: "Telstra Display", "Helvetica Neue", helvetica, arial, sans-serif;
+  --body-font-family: "Telstra Text Variable", "Helvetica Neue", helvetica, arial, sans-serif;
+  --background-color: #ffffff;
+  --text-color: rgb(0, 0, 0);
+  --link-color: rgb(13, 84, 255);
+  --link-hover-color: rgb(10, 66, 200);
+  --telstra-blue: rgb(13, 84, 255);
+  --telstra-coral: rgb(249, 100, 73);
+  --telstra-ink: rgb(19, 26, 53);
+  --section-padding: 0px;
+  --content-max-width: 1136px;
+  --nav-height: 54px;
+}
+
+html, body { overflow: auto !important; }

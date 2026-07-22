@@ -1,0 +1,121 @@
+.categorylinks {
+  --categorylinks-gap: 16px;
+  --categorylinks-heading-size: 20px;
+  --categorylinks-heading-weight: 400;
+  --categorylinks-heading-color: rgb(19, 26, 53);
+  --categorylinks-link-size: 16px;
+  --categorylinks-link-color: rgb(19, 26, 53);
+  --categorylinks-card-bg: rgb(251, 248, 243);
+  --categorylinks-icon-size: 48px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--categorylinks-gap);
+  margin-top: 16px;
+}
+
+@media (width >= 600px) {
+  .categorylinks {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 900px) {
+  .categorylinks {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Row = one category column */
+.categorylinks > div {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Heading cell */
+.categorylinks > div > div:first-child {
+  padding: 8px 16px;
+}
+
+.categorylinks > div > div:first-child p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.categorylinks > div > div:first-child .icon {
+  width: var(--categorylinks-icon-size);
+  height: var(--categorylinks-icon-size);
+}
+
+.categorylinks > div > div:first-child a {
+  font-size: var(--categorylinks-heading-size);
+  font-weight: var(--categorylinks-heading-weight);
+  color: var(--categorylinks-heading-color);
+  text-decoration: none;
+  font-family: var(--heading-font-family, sans-serif);
+}
+
+.categorylinks > div > div:first-child a:hover {
+  text-decoration: underline;
+}
+
+/* Links cell */
+.categorylinks > div > div:last-child {
+  background: var(--categorylinks-card-bg);
+  padding: 8px 16px 16px;
+  border-radius: 0 0 8px 8px;
+  flex: 1;
+}
+
+.categorylinks > div > div:last-child ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categorylinks > div > div:last-child li {
+  padding: 5px 0;
+}
+
+.categorylinks > div > div:last-child a {
+  font-size: var(--categorylinks-link-size);
+  color: var(--categorylinks-link-color);
+  text-decoration: none;
+}
+
+.categorylinks > div > div:last-child a:hover {
+  text-decoration: underline;
+}
+
+/* Section heading override */
+.categorylinks-container h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: rgb(19, 26, 53);
+  margin-bottom: 0;
+}
+
+/* Reset EDS button styles within this block */
+main .categorylinks .button-container {
+  display: inline;
+}
+
+main .categorylinks a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--categorylinks-link-color);
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+}
+
+main .categorylinks a.button:any-link:hover {
+  text-decoration: underline;
+}

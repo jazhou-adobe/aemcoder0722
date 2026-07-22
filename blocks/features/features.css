@@ -1,0 +1,72 @@
+.features {
+  --features-text-color: rgb(19, 26, 53);
+  --features-gap: 24px;
+  --features-icon-size: 56px;
+  --features-title-size: 24px;
+  --features-body-size: 16px;
+
+  margin-top: 8px;
+}
+
+.features > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0 12px;
+  margin-bottom: 24px;
+}
+
+.features > div > div:first-child {
+  flex-shrink: 0;
+  width: var(--features-icon-size);
+  height: var(--features-icon-size);
+}
+
+.features > div > div:first-child p {
+  margin: 0;
+}
+
+.features > div > div:first-child .icon {
+  display: block;
+  width: var(--features-icon-size);
+  height: var(--features-icon-size);
+}
+
+.features > div > div:first-child .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.features > div > div:last-child {
+  padding-left: 16px;
+}
+
+.features > div > div:last-child h3 {
+  font-family: var(--heading-font-family, sans-serif);
+  font-size: var(--features-title-size);
+  font-weight: 700;
+  color: var(--features-text-color);
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.features > div > div:last-child p {
+  font-size: var(--features-body-size);
+  color: var(--features-text-color);
+  line-height: 1.5;
+  margin: 0.25em 0 0;
+}
+
+@media (width >= 900px) {
+  .features {
+    display: flex;
+    flex-direction: row;
+    gap: var(--features-gap);
+  }
+
+  .features > div {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}

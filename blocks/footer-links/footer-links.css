@@ -1,0 +1,79 @@
+.footer-links {
+  --footer-bg: #f2f2f7;
+  --footer-text: #131a35;
+  --footer-link-color: #131a35;
+  --footer-heading-size: 20px;
+  --footer-link-size: 16px;
+
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 80px 24px 0;
+}
+
+.footer-links h2 {
+  font-size: var(--footer-heading-size);
+  font-weight: 400;
+  margin: 0 0 32px;
+  color: var(--footer-text);
+  line-height: 1.25;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  font-size: var(--footer-link-size);
+  line-height: 24px;
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Reset EDS button styling for footer links */
+main .footer-links .button-container { display: inline; }
+main .footer-links a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--footer-link-color);
+  font-size: var(--footer-link-size);
+  font-weight: inherit;
+  padding: 6px 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+}
+
+/* Row = direct child of .footer-links; 4 cells (columns) inside it */
+.footer-links > div {
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+@media (width >= 900px) {
+  .footer-links {
+    padding: 80px 32px 0;
+  }
+
+  .footer-links > div {
+    display: flex;
+    gap: 0;
+  }
+
+  .footer-links > div > div {
+    flex: 1;
+  }
+}

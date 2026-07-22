@@ -1,33 +1,192 @@
+/* Columns block — full-width promotional bands */
+
+.columns-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.columns {
+  --columns-gap: 0;
+  --columns-padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Each row = one promo band */
 .columns > div {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  min-height: 280px;
+  overflow: hidden;
+  background: var(--light-color);
+  border-radius: 0;
 }
 
-.columns img {
-  width: 100%;
-}
-
+/* Cells */
 .columns > div > div {
-  order: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
+/* Image cell */
+.columns > div > div:has(picture) {
+  min-height: 200px;
+  overflow: hidden;
 }
 
-.columns > div > .columns-img-col img {
+.columns > div > div picture {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
+.columns > div > div picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text cell */
+.columns > div > div:not(:has(picture)) {
+  padding: 32px 24px;
+}
+
+/* Category / eyebrow */
+.columns > div > div:not(:has(picture)) > p:first-child {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(74, 77, 85);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Heading */
+.columns h2 {
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(19, 26, 53);
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* Body text */
+.columns > div > div:not(:has(picture)) > p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(19, 26, 53);
+}
+
+/* Terms / fine print (italic paragraphs) */
+.columns > div > div:not(:has(picture)) > p > em {
+  font-size: 14px;
+  color: rgb(74, 77, 85);
+}
+
+/* CTA buttons */
+main .columns a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(13, 84, 255);
+  color: #fff;
+  border: none;
+  border-radius: 36px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 8px;
+}
+
+main .columns a.button:any-link:hover {
+  background: rgb(10, 66, 200);
+}
+
+/* Secondary button (outline white, used in blue band) */
+main .columns a.button.secondary:any-link {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+main .columns a.button.secondary:any-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ROW 2 VARIANT — blue background band (Points + Pay) */
+.columns > div:nth-child(2) {
+  background: rgb(13, 84, 255);
+  color: #fff;
+}
+
+.columns > div:nth-child(2) > div:not(:has(picture)) > p:first-child {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.columns > div:nth-child(2) h2 {
+  color: #fff;
+  font-size: 40px;
+}
+
+.columns > div:nth-child(2) > div:not(:has(picture)) > p {
+  color: #fff;
+}
+
+.columns > div:nth-child(2) > div:not(:has(picture)) > p > em {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+main .columns > div:nth-child(2) a.button:any-link {
+  background: #fff;
+  color: rgb(13, 84, 255);
+}
+
+main .columns > div:nth-child(2) a.button:any-link:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+main .columns > div:nth-child(2) a.button.secondary:any-link {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* Desktop layout */
 @media (width >= 900px) {
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: row;
+  }
+
+  /* Row 1: image left, text right — constrained height */
+  .columns > div:first-child {
+    flex-direction: row;
+    max-height: 320px;
+  }
+
+  /* Row 2: text left, image right — taller band */
+  .columns > div:nth-child(2) {
+    flex-direction: row;
+    min-height: 500px;
   }
 
   .columns > div > div {
-    flex: 1;
-    order: unset;
+    flex: 1 1 50%;
+  }
+
+  .columns > div > div:not(:has(picture)) {
+    padding: 40px 48px;
+  }
+
+  .columns > div:nth-child(2) h2 {
+    font-size: 56px;
   }
 }

@@ -1,0 +1,207 @@
+/* supportcards block */
+.supportcards {
+  --supportcards-featured-bg: #fbf8f3;
+  --supportcards-featured-radius: 8px;
+  --supportcards-featured-padding: 32px 40px 24px;
+  --supportcards-border-color: #d4cdc3;
+  --supportcards-heading-color: rgb(19, 26, 53);
+  --supportcards-link-color: rgb(13, 84, 255);
+  --supportcards-icon-size: 48px;
+  --supportcards-compact-icon-size: 32px;
+}
+
+/* Featured cards container */
+.supportcards .featured-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: var(--supportcards-featured-bg);
+  border-radius: var(--supportcards-featured-radius);
+  padding: var(--supportcards-featured-padding);
+  margin-bottom: 24px;
+}
+
+@media (width >= 900px) {
+  .supportcards .featured-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* Individual featured card */
+.supportcards .featured-card {
+  padding: 0 0 24px;
+}
+
+.supportcards .featured-card + .featured-card {
+  padding-top: 24px;
+  border-top: 1px solid var(--supportcards-border-color);
+}
+
+@media (width >= 900px) {
+  .supportcards .featured-card + .featured-card {
+    padding-top: 0;
+    border-top: none;
+    border-left: 1px solid var(--supportcards-border-color);
+    padding-left: 32px;
+  }
+}
+
+.supportcards .featured-card .card-icon {
+  margin-bottom: 12px;
+}
+
+.supportcards .featured-card .card-icon .icon {
+  width: var(--supportcards-icon-size);
+  height: var(--supportcards-icon-size);
+}
+
+.supportcards .featured-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--supportcards-heading-color);
+  margin: 0 0 8px;
+}
+
+.supportcards .featured-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  color: #414141;
+}
+
+/* Primary CTA (secondary button from EDS perspective - uses <em> wrapper) */
+main .supportcards .featured-card .button-wrapper {
+  margin: 12px 0;
+}
+
+main .supportcards .featured-card a.button:any-link {
+  display: inline-block;
+  background: #fff;
+  color: var(--supportcards-link-color);
+  border: 2px solid var(--supportcards-link-color);
+  border-radius: 36px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+main .supportcards .featured-card a.button:any-link:hover {
+  background: var(--supportcards-link-color);
+  color: #fff;
+}
+
+/* Secondary link (PDF link) - plain link style */
+.supportcards .featured-card .card-secondary-link {
+  font-size: 14px;
+}
+
+.supportcards .featured-card .card-secondary-link a {
+  color: var(--supportcards-link-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.supportcards .featured-card .card-secondary-link a:hover {
+  text-decoration: underline;
+}
+
+.supportcards .featured-card .card-secondary-link a::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d54ff' stroke-width='2'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* Compact cards row */
+.supportcards .compact-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (width >= 900px) {
+  .supportcards .compact-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+}
+
+/* Individual compact card */
+.supportcards .compact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 16px;
+  border: 1px solid var(--supportcards-border-color);
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+
+@media (width >= 900px) {
+  .supportcards .compact-card {
+    margin-bottom: 0;
+    margin-right: -1px;
+  }
+}
+
+.supportcards .compact-card .card-icon {
+  margin-bottom: 8px;
+}
+
+.supportcards .compact-card .card-icon .icon {
+  width: var(--supportcards-compact-icon-size);
+  height: var(--supportcards-compact-icon-size);
+}
+
+.supportcards .compact-card h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--supportcards-heading-color);
+  margin: 0 0 4px;
+}
+
+.supportcards .compact-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.supportcards .compact-card a {
+  color: var(--supportcards-link-color);
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.supportcards .compact-card a::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d54ff' stroke-width='2'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.supportcards .compact-card a:hover {
+  text-decoration: underline;
+}
+
+/* Section heading override */
+.supportcards-wrapper ~ h2,
+.section > div > h2:first-child {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--supportcards-heading-color);
+}
+
+/* Hide the raw rows (pre-JS decoration) */
+.supportcards > div {
+  display: none;
+}
