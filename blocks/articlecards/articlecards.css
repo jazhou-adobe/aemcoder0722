@@ -1,0 +1,136 @@
+/* Section-level default content styling (heading + discover link) */
+.section.articlecards-container > div > h2 {
+  margin-bottom: 0;
+}
+
+.section.articlecards-container > div > p {
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.section.articlecards-container > div > p a {
+  font-size: 14px;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.section.articlecards-container > div > p a::after {
+  content: ' \2192';
+}
+
+.section.articlecards-container > div > p a:hover {
+  text-decoration: underline;
+}
+
+.articlecards {
+  --card-bg: #ffffff;
+  --card-radius: 8px;
+  --category-color: rgb(74, 77, 85);
+  --title-color: rgb(19, 26, 53);
+  --card-gap: 24px;
+}
+
+.articlecards > div {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background: var(--card-bg);
+  transition: box-shadow 0.2s ease;
+}
+
+.articlecards > div:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Image cell */
+.articlecards > div > div:first-child {
+  aspect-ratio: 656 / 370;
+  overflow: hidden;
+}
+
+.articlecards > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text cell */
+.articlecards > div > div:last-child {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Category label */
+.articlecards > div > div:last-child p:first-child {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--category-color);
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+
+/* Title */
+.articlecards > div > div:last-child h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--title-color);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.articlecards > div > div:last-child h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.articlecards > div > div:last-child h3 a:hover {
+  text-decoration: underline;
+}
+
+/* Summary text */
+.articlecards > div > div:last-child p:last-child {
+  font-size: 16px;
+  color: var(--category-color);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Arrow link at bottom */
+.articlecards .card-arrow {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.articlecards .card-arrow a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  color: var(--link-color, rgb(13, 84, 255));
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Mobile: stack cards */
+@media (width < 900px) {
+  .articlecards > div {
+    margin-bottom: var(--card-gap);
+  }
+}
+
+/* Desktop: 4-up grid */
+@media (width >= 900px) {
+  .articlecards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--card-gap);
+  }
+}
