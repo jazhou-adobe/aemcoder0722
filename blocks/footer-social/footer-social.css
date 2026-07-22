@@ -50,16 +50,31 @@
   height: 24px;
 }
 
-/* Brand logos section */
-.footer-social .brands ul {
+/* Brand logos section — logos authored as flat <p><a><picture> (not a list,
+   which trips the DA content-bus when images nest in <li>). Lay them in a row. */
+.footer-social .footer-brands {
+  display: flex;
+  align-items: center;
   gap: 24px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
-.footer-social .brands img {
+.footer-social .footer-brands p {
+  margin: 0;
+}
+
+.footer-social .footer-brands img,
+.footer-social .footer-brands .icon img {
   height: 35px;
-  width: 95px;
+  width: auto;
+  max-width: 110px;
   object-fit: contain;
+}
+
+.footer-social .footer-brands .icon {
+  display: inline-flex;
+  height: 35px;
+  width: auto;
 }
 
 /* Reset EDS button styling */
